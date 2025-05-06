@@ -36,6 +36,7 @@ import useDeepfakeVideoMulti from "@/lib/zustand-states/deepfake-video-multi/sto
 // import ReactPlayer from "react-player";
 import DragAndDropInputVideoPreview from "@/components/drag-and-drop-input-video-preview";
 import DragAndDropInputFilePreview from "@/components/drag-and-drop-input-file-preview";
+import SidebarWrapper from "@/components/wrappers/sidebar-wrapper";
 
 
 
@@ -198,8 +199,9 @@ const Sidebar = () => {
     console.log("this is targ: " + state.target_image);
 
     return (
-        <ScrollArea className="h-full px-2 sm:px-4">
-            <form className="space-y-5 py-2  sm:py-4" action="">
+        <SidebarWrapper>
+            <ScrollArea className="h-full px-2 sm:px-4">
+                <form className="space-y-5 py-2  sm:py-4" action="">
 
 
 
@@ -214,21 +216,21 @@ const Sidebar = () => {
 
 
 
-                <Label className="flex gap-2 items-center">Image</Label>
+                    <Label className="flex gap-2 items-center">Image</Label>
 
-                <div className="space-y-3">
-                    <Label className="flex gap-2 items-center">
-                        Upload Video
-                        <Tooltip>
-                            <TooltipTrigger asChild>
-                                <CircleAlert className="text-muted-foreground size-4" />
-                            </TooltipTrigger>
-                            <TooltipContent side="right">
-                                <p>Upload an image to use for face swapping.</p>
-                            </TooltipContent>
-                        </Tooltip>
-                    </Label>
-                    {/* <Input
+                    <div className="space-y-3">
+                        <Label className="flex gap-2 items-center">
+                            Upload Video
+                            <Tooltip>
+                                <TooltipTrigger asChild>
+                                    <CircleAlert className="text-muted-foreground size-4" />
+                                </TooltipTrigger>
+                                <TooltipContent side="right">
+                                    <p>Upload an image to use for face swapping.</p>
+                                </TooltipContent>
+                            </Tooltip>
+                        </Label>
+                        {/* <Input
                         type="file"
                         accept="video/*"
                         name="video"
@@ -236,7 +238,7 @@ const Sidebar = () => {
                         className="w-fit"
                     /> */}
 
-                    {/* {ytLink.length <= 0 && (
+                        {/* {ytLink.length <= 0 && (
                         <>
                             {videoPreviewVideo && (
                                 <div className="mt-4 max-w-full mb-5 w-auto rounded-md h-32 m-auto">
@@ -253,53 +255,53 @@ const Sidebar = () => {
                         </>
 
                     )} */}
-                    <DragAndDropInputVideoPreview
-                        onVideoUpload={handleTargetVideoUpload}
-                        videoPreview={state.init_video}
-                        name="target_video"
-                        ytLink={ytLink}
-                    />
+                        <DragAndDropInputVideoPreview
+                            onVideoUpload={handleTargetVideoUpload}
+                            videoPreview={state.init_video}
+                            name="target_video"
+                            ytLink={ytLink}
+                        />
 
-                    <center>or</center>
-                    <Input
-                        type="text"
-                        onChange={(e) => setYtLink(e.target.value)}
-                        value={ytLink}
-                        className="mx-auto rounded-lg"
-                        placeholder="Enter youtube video link"
-                    />
+                        <center>or</center>
+                        <Input
+                            type="text"
+                            onChange={(e) => setYtLink(e.target.value)}
+                            value={ytLink}
+                            className="mx-auto rounded-lg"
+                            placeholder="Enter youtube video link"
+                        />
 
-                    {/* <Input type="text"
+                        {/* <Input type="text"
                         onChange={(e) => setYtLink(e.target.value)}
                         value={ytLink}
                         className="mx-auto rounded-lg" placeholder="Enter youtube video link" /> */}
 
-                </div>
+                    </div>
 
 
-                <div className="space-y-3">
-                    <Label className="flex gap-2 items-center">
-                        Upload Target Image
-                        <Tooltip>
-                            <TooltipTrigger asChild>
-                                <CircleAlert className="text-muted-foreground size-4" />
-                            </TooltipTrigger>
-                            <TooltipContent side="right">
-                                <p>Upload an image to use for face swapping.</p>
-                            </TooltipContent>
-                        </Tooltip>
-                    </Label>
+                    <div className="space-y-3">
+                        <Label className="flex gap-2 items-center">
+                            Upload Target Image
+                            <Tooltip>
+                                <TooltipTrigger asChild>
+                                    <CircleAlert className="text-muted-foreground size-4" />
+                                </TooltipTrigger>
+                                <TooltipContent side="right">
+                                    <p>Upload an image to use for face swapping.</p>
+                                </TooltipContent>
+                            </Tooltip>
+                        </Label>
 
 
 
 
-                    <DragAndDropInputFilePreview
-                        onFileUpload={handleTargetImageUpload}
-                        imagePreview={state.target_image}
-                        name="target_image"
-                    />
+                        <DragAndDropInputFilePreview
+                            onFileUpload={handleTargetImageUpload}
+                            imagePreview={state.target_image}
+                            name="target_image"
+                        />
 
-                    {/* <Input
+                        {/* <Input
                         type="file"
                         accept="image/*"
                         name="image"
@@ -315,32 +317,32 @@ const Sidebar = () => {
                             className="mx-auto mt-2 rounded-lg"
                         />
                     )} */}
-                </div>
+                    </div>
 
 
 
 
-                <div className="space-y-3">
-                    <Label className="flex gap-2 items-center">
-                        Upload Reference Image
-                        <Tooltip>
-                            <TooltipTrigger asChild>
-                                <CircleAlert className="text-muted-foreground size-4" />
-                            </TooltipTrigger>
-                            <TooltipContent side="right">
-                                <p>Upload the source image for the face to be swapped.</p>
-                            </TooltipContent>
-                        </Tooltip>
-                    </Label>
+                    <div className="space-y-3">
+                        <Label className="flex gap-2 items-center">
+                            Upload Reference Image
+                            <Tooltip>
+                                <TooltipTrigger asChild>
+                                    <CircleAlert className="text-muted-foreground size-4" />
+                                </TooltipTrigger>
+                                <TooltipContent side="right">
+                                    <p>Upload the source image for the face to be swapped.</p>
+                                </TooltipContent>
+                            </Tooltip>
+                        </Label>
 
 
-                    <DragAndDropInputFilePreview
-                        onFileUpload={handleReferenceImageUpload}
-                        imagePreview={state.reference_image}
-                        name="reference_image"
-                    />
+                        <DragAndDropInputFilePreview
+                            onFileUpload={handleReferenceImageUpload}
+                            imagePreview={state.reference_image}
+                            name="reference_image"
+                        />
 
-                    {/* <Input
+                        {/* <Input
                         type="file"
                         accept="image/*"
                         name="image"
@@ -356,14 +358,15 @@ const Sidebar = () => {
                             className="mx-auto mt-2 rounded-lg"
                         />
                     )} */}
-                </div>
+                    </div>
 
 
 
 
 
-            </form>
-        </ScrollArea>
+                </form>
+            </ScrollArea>
+        </SidebarWrapper>
     );
 };
 

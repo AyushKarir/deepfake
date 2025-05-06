@@ -90,13 +90,13 @@ const Header = () => {
                 <DropdownMenuItem>Dashboard</DropdownMenuItem>
               </Link>
               <Link
-                href={"https://docs.modelslab.com/image-generation"}
+                href={"https://docs.modelslab.com/deepfake-api/overview"}
                 target="_blank"
               >
                 <DropdownMenuItem>Documentation</DropdownMenuItem>
               </Link>
               <Link
-                href={"https://modelslab.com/pricing#imagen"}
+                href={"https://modelslab.com/pricing#video_fusion"}
                 target="_blank"
               >
                 <DropdownMenuItem>Pricing</DropdownMenuItem>
@@ -105,7 +105,7 @@ const Header = () => {
           </DropdownMenu>
         ) : (
           <Button asChild className="bg-primary">
-            <Link href="https://modelslab.com/playground-login?product=imagen">
+            <Link href="https://modelslab.com/playground-login?product=video_fusion">
               <User />
               <span className="hidden sm:inline-block">modelslab</span>login
             </Link>

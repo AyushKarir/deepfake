@@ -327,6 +327,7 @@ const Content = () => {
 
 
     return (
+
         <div
             className={cn("h-full p-2 pl-0.5 grid gap-1", "grid-rows-[auto_1fr] ")}
         >
@@ -445,7 +446,7 @@ const Content = () => {
                             onClick={handleSubmit}
                             disabled={isSubmitting || isProcessing}
                         >
-                            Run
+                            Generate
                         </Button>
                     )}
 
@@ -459,6 +460,7 @@ const Content = () => {
                 </div>
             </div>
         </div>
+
     );
 };
 

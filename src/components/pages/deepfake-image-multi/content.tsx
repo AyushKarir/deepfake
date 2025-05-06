@@ -349,7 +349,7 @@ const Content = () => {
                             onClick={handleSubmit}
                             disabled={isSubmitting || isProcessing}
                         >
-                            Remove Background
+                            Generate
                         </Button>
                     )}
 

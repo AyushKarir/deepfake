@@ -8,9 +8,9 @@ export default function Home() {
   const router = useRouter();
 
   useEffect(() => {
-    router.push("/text-to-video");
+    router.push("/deepfake-image-single");
     setTimeout(() => {
-      router.push("/text-to-video");
+      router.push("/deepfake-image-single");
     }, 100);
   }, []);
 

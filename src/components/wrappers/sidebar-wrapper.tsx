@@ -31,7 +31,7 @@ const SidebarWrapper = ({
             Upgrade for more speed on dedicated GPU
           </h3>
           <Link
-            href={"https://modelslab.com/pricing#imagen"}
+            href={"https://modelslab.com/pricing#video_fusion"}
             target="_blank"
             className={buttonVariants()}
           >

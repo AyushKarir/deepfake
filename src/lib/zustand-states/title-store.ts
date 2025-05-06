@@ -6,7 +6,7 @@ interface TitleState {
     resetTitle: () => void;
 }
 
-const DEFAULT_TITLE = "Videogen";
+const DEFAULT_TITLE = "Deepfake";
 
 export const useTitleStore = create<TitleState>((set) => ({
     title: DEFAULT_TITLE,
